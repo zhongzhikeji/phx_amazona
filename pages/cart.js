@@ -94,7 +94,7 @@ import dynamic from 'next/dynamic';
                 <div className="pb-3 text-xl">
                   共 ({cartItems.reduce((a, c) => a + c.quantity, 0)}) : ¥
                   {cartItems.reduce((a, c) => a + c.quantity * c.price, 0)}
-                </div>
+                r</div>
               </li>
               <li>
                 <button
@@ -112,4 +112,5 @@ import dynamic from 'next/dynamic';
   );
 }
 
+//服务器渲染为false，摆脱eslint错误
 export default dynamic(()=>Promise.resolve(CartScreen),{ssr:false})
