@@ -97,6 +97,7 @@ import dynamic from 'next/dynamic';
                 r</div>
               </li>
               <li>
+                  {/*'login?redirect=/shipping' 检查用户是否登录，如果登录则跳转shipping，如果没有登录则跳转login*/}
                 <button
                   onClick={() => router.push('login?redirect=/shipping')}
                   className="primary-button w-full"

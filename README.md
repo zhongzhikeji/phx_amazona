@@ -39,34 +39,55 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Lessons
 1.Introduction
+<br>
 2.Install tools
+<br>
 3.Create Next App
+<br>
 4.Publish to Github
 
 ## list products
 1.add data.js
+<br>
 2.add images
+<br>
 3.render products
 
 ## Create Product Details
 1.create product page
+<br>
 2.create 3 columns
+<br>
 3.show image in frist column
+<br>
 4.show product info in second column
+<br>
 5.show add to cart action on third column
+<br>
 6.add styles
 
 ## cart page
 1.create cart.js
+<br>
 2.use context to get cart items
+<br>
 3.list items in cart items
+<br>
 4.redirect to cart screen after add to cart
 
 ## handle changing cart items
 1.add selext box for quantity
+<br>
 2.handle select box change
 
-## Save cart items
-保存购物车列表
+## Save cart items (保存购物车列表)
 1.install js-cookie package（npm install js-cookie）
+<br>
 2.sava and retrevie cart items in cookies
+
+## create Login Form
+1.install react hook form
+<br>
+2.create input boxes
+<br>
+3.add login button
