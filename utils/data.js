@@ -1,5 +1,20 @@
+import bcrypt from 'bcryptjs'
 
 const data={
+    users:[
+      {
+        name:'Phoenix',
+        tel:'18073215625',
+        password:bcrypt.hashSync('123456'),//加密数据库密码
+        isAdmin:true,
+      },
+      {
+        name:'James',
+        tel:'18169322119',
+        password:bcrypt.hashSync('123456'),
+        isAdmin:false,
+      },
+    ],
     products: [
         {
           name: 'Free Shirt',

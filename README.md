@@ -91,3 +91,15 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 2.create input boxes
 <br>
 3.add login button
+<br>
+
+## connect to mongoDB
+1.install mongoose
+<br>
+2.install mongodb or use mongodb atlas
+<br>
+3.save connection url in .env file
+<br>
+4.create db utils file
+<br>
+5.create sample users
