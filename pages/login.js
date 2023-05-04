@@ -1,15 +1,41 @@
 import Layout from "@/components/Layout";
 import Link from "next/link";
 import {useForm} from "react-hook-form";
+import {signIn, useSession} from "next-auth/react";
+import {getError} from "@/utils/error";
+import {toast} from "react-toastify";
+import React,{useEffect} from "react";
+import {useRouter} from "next/router";
 
 export default function LoginScreen(){
+    const {data:session}=useSession();
+    const router=useRouter();
+    const {redirect}=router.query;
+    useEffect(()=>{
+        if (session?.user){
+            router.push(redirect || '/')
+        }
+    },[router,session,redirect]);
+
     //使用 use-form-hook
     const {handleSubmit,
         register,
         formState:{errors},
     }=useForm()
-    const submitHandler=({tel,password})=>{
-        console.log(tel,password)
+    const submitHandler=async ({tel,password})=>{
+        // console.log(tel,password)
+        try {
+            const result=await signIn('credentials',{
+                redirect:false,
+                tel,
+                password
+            });
+            if (result.error){
+                toast.error(result.error)
+            }
+        } catch (err) {
+            toast.error(getError(err))
+        }
     }
     return (
         <Layout title="Login">
@@ -23,7 +49,7 @@ export default function LoginScreen(){
                                value:/^1[3456789]\d{9}$/, message:"请输入正确的手机号码",
                                }
                            })}
-                           className="w-full" id="usrtel" autoFocus></input>
+                           className="w-full" id="tel" autoFocus></input>
                     {errors.tel && <div className="text-red-500">{errors.tel.message}</div>}
                 </div>
                 <div className="mb-4">

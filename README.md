@@ -37,72 +37,53 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-## Lessons
-1.Introduction
-<br>
-2.Install tools
-<br>
-3.Create Next App
-<br>
-4.Publish to Github
+## Note：
+1. 使用next-auth 向 Next.js 应用程序添加身份验证；文档链接https://next-auth.js.org/getting-started/example
 
-## list products
-1.add data.js
-<br>
-2.add images
-<br>
-3.render products
+## Lessons
+1. Introduction
+2. Install tools
+3. Create Next App
+4. Publish to Github
+
+## List products
+1. add data.js
+2. add images
+3. render products
 
 ## Create Product Details
-1.create product page
-<br>
-2.create 3 columns
-<br>
-3.show image in frist column
-<br>
-4.show product info in second column
-<br>
-5.show add to cart action on third column
-<br>
-6.add styles
+1. create product page
+2. create 3 columns
+3. show image in frist column
+4. show product info in second column
+5. show add to cart action on third column
+6. add styles
 
 ## cart page
-1.create cart.js
-<br>
-2.use context to get cart items
-<br>
-3.list items in cart items
-<br>
-4.redirect to cart screen after add to cart
+1. create cart.js
+2. use context to get cart items
+3. list items in cart items
+4. redirect to cart screen after add to cart
 
 ## handle changing cart items
-1.add selext box for quantity
-<br>
-2.handle select box change
+1. add selext box for quantity
+2. handle select box change
 
 ## Save cart items (保存购物车列表)
-1.install js-cookie package（npm install js-cookie）
-<br>
-2.sava and retrevie cart items in cookies
+1. install js-cookie package（npm install js-cookie）
+2. sava and retrevie cart items in cookies
 
 ## create Login Form
-1.install react hook form
-<br>
-2.create input boxes
-<br>
-3.add login button
-<br>
+1. install react hook form
+2. create input boxes
+3. add login button
 
 ## connect to mongoDB
-1.install mongoose
-<br>
-2.install mongodb or use mongodb atlas
-<br>
-3.save connection url in .env file
-<br>
-4.create db utils file
-<br>
-5.create sample users
+1. install mongoose
+2. install mongodb or use mongodb atlas
+3. save connection url in .env file
+4. create db utils file
+5. create sample users
 
 
 ## create Login Api
