@@ -97,3 +97,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 1. check user authentication
 2. install headlessui
 3. show user menu
+
+## create shipping screen
+1. display address fields
+2. save address in context
