@@ -4,13 +4,13 @@ const data={
     users:[
       {
         name:'Phoenix',
-        tel:'18073215625',
+        email:'my123@qq.com',
         password:bcrypt.hashSync('123456'),//加密数据库密码
         isAdmin:true,
       },
       {
         name:'James',
-        tel:'18169322119',
+        email:'your123@qq.com',
         password:bcrypt.hashSync('123456'),
         isAdmin:false,
       },

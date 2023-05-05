@@ -14,7 +14,7 @@ async function connect(){
         connection.isConnected = mongoose.connections[0].readyState;
         // =1，radiusState= 1，回到以前的连接，没必要连接数据库
         if (connection.isConnected === 1){
-            console.log('使用 previous 连接')
+            console.log('使用以前的连接')
             return
         }
         await mongoose.disconnect()
@@ -30,7 +30,7 @@ async function disconnect(){
     //检查连接
     if (connection.isConnected){
         //如果处于生成模式，断开连接
-        if (process.env.NODE_ENV==='production'){
+        if (process.env.NODE_ENV ==='production'){
             await mongoose.disconnect();
             connection.isConnected = false;
         }else {

@@ -26,12 +26,12 @@ export default function LoginScreen(){
         register,
         formState:{errors},
     }=useForm();
-    const submitHandler=async ({tel,password})=>{
+    const submitHandler=async ({email,password})=>{
         // console.log(tel,password)
         try {
             const result=await signIn('credentials',{
                 redirect:false,
-                tel,
+                email,
                 password
             });
             if (result.error){
@@ -46,15 +46,23 @@ export default function LoginScreen(){
             <form className="mx-auto max-w-screen-md" onSubmit={handleSubmit(submitHandler)}>
                 <h1 className="mb-4 text-xl">Login</h1>
                 <div className="mb-4">
-                    <label htmlFor="tel">电话号码</label>
-                    <input type="tel"
-                           {...register('tel',{required:'请输入手机号码',
-                               pattern:{
-                               value:/^1[3456789]\d{9}$/, message:"请输入正确的手机号码",
-                               }
-                           })}
-                           className="w-full" id="tel" autoFocus></input>
-                    {errors.tel && <div className="text-red-500">{errors.tel.message}</div>}
+                    <label htmlFor="email">Email</label>
+                    <input
+                        type="email"
+                        {...register('email', {
+                            required: 'Please enter email',
+                            pattern: {
+                                value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/i,
+                                message: 'Please enter valid email',
+                            },
+                        })}
+                        className="w-full"
+                        id="email"
+                        autoFocus
+                    ></input>
+                    {errors.email && (
+                        <div className="text-red-500">{errors.email.message}</div>
+                    )}
                 </div>
                 <div className="mb-4">
                     <label htmlFor="password">密码</label>

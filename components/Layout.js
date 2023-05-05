@@ -28,7 +28,7 @@ export default function Layout({title,children}) {
     {/* react component is html element */}
     <Head>
         {/* 使用大括号检查标题，如果确实存在使用它，否则render(渲染)，加上-amazona来显示 */}
-        <title>{title ? title + '- Amazona':'Amazona'}</title>
+        <title>{title ? title + '-Amazona':'Amazona'}</title>
         <meta name="description" content="Ecommerce Website" />
         <link rel='icon' href='/favicon.ico' />
     </Head>
