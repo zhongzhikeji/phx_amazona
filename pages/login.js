@@ -5,12 +5,15 @@ import {signIn, useSession} from "next-auth/react";
 import {getError} from "@/utils/error";
 import {toast} from "react-toastify";
 import React,{useEffect} from "react";
-import {useRouter} from "next/router";
+import { useRouter } from 'next/router'
 
 export default function LoginScreen(){
     const {data:session}=useSession();
-    const router=useRouter();
+
+    const router = useRouter()
+
     const {redirect}=router.query;
+
     useEffect(()=>{
         if (session?.user){
             router.push(redirect || '/')
@@ -18,10 +21,11 @@ export default function LoginScreen(){
     },[router,session,redirect]);
 
     //使用 use-form-hook
-    const {handleSubmit,
+    const {
+        handleSubmit,
         register,
         formState:{errors},
-    }=useForm()
+    }=useForm();
     const submitHandler=async ({tel,password})=>{
         // console.log(tel,password)
         try {
@@ -57,7 +61,7 @@ export default function LoginScreen(){
                     <input type="password"
                            {...register('password',{
                                required:'请输入密码',
-                               minLength:{value:8,message:'密码不少于八位'}
+                               minLength:{value:6,message:'密码不少于六位'}
                            })}
                            className="w-full" id="password" autoFocus></input>
                     {errors.password && <div className="text-red-500">{errors.password.message}</div>}

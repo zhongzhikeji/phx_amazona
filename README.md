@@ -39,12 +39,13 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Note：
 1. 使用next-auth 向 Next.js 应用程序添加身份验证；文档链接https://next-auth.js.org/getting-started/example
+2. 使用headless ui 
 
 ## Lessons
 1. Introduction
 2. Install tools
 3. Create Next App
-4. Publish to Github
+4. Publish to GitHub
 
 ## List products
 1. add data.js
@@ -54,7 +55,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## Create Product Details
 1. create product page
 2. create 3 columns
-3. show image in frist column
+3. show image in first column
 4. show product info in second column
 5. show add to cart action on third column
 6. add styles
@@ -66,12 +67,12 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 4. redirect to cart screen after add to cart
 
 ## handle changing cart items
-1. add selext box for quantity
+1. add select box for quantity
 2. handle select box change
 
 ## Save cart items (保存购物车列表)
 1. install js-cookie package（npm install js-cookie）
-2. sava and retrevie cart items in cookies
+2. sava and retrieve cart items in cookies
 
 ## create Login Form
 1. install react hook form
@@ -91,3 +92,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 2. create nextauth.js
 3. implement signin
 4. use signin in login form
+
+## Add User Menu
+1. check user authentication
+2. install headlessui
+3. show user menu

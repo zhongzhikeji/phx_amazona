@@ -14,14 +14,14 @@ async function connect(){
         connection.isConnected = mongoose.connections[0].readyState;
         // =1，radiusState= 1，回到以前的连接，没必要连接数据库
         if (connection.isConnected === 1){
-            console.log('use previous connection')
+            console.log('使用 previous 连接')
             return
         }
         await mongoose.disconnect()
     }
     //定义数据库对象等于 作为字段连接的对象
     const db=await mongoose.connect(process.env.MONGODB_URI);
-    console.log('new connection');
+    console.log('新连接');
     connection.isConnected=db.connections[0].readyState;
 }
 
@@ -35,7 +35,7 @@ async function disconnect(){
             connection.isConnected = false;
         }else {
             //没有断开连接，所以只断开连接
-            console.log('not disconnected')
+            console.log('断开连接')
         }
     }
 }

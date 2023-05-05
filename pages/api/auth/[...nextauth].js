@@ -1,6 +1,6 @@
 import NextAuth from "next-auth";
-import db from "@/utils/db";
-import User from "@/models/User";
+import db from "../../../utils/db";
+import User from "../../../models/User";
 import bcryptjs from "bcryptjs";
 import CredentialsProvider from 'next-auth/providers/credentials'
 
@@ -8,9 +8,9 @@ export default NextAuth({
     session:{
         strategy:'jwt',
     },
-    callback:{
+    callbacks:{
         async jwt({token,user}){
-            if (user?.id) token._id=user._id;
+            if (user?._id) token._id=user._id;
             if (user?.isAdmin) token.isAdmin=user.isAdmin;
             return token;
         },
@@ -27,7 +27,7 @@ export default NextAuth({
                 await db.connect();
                 // 根据数据库查找用户
                 const user=await User.findOne({
-                   tel:credentials.tel
+                   tel: credentials.tel,
                 });
                 //然后断开连接，保持代码，下一步检查用户和密码一起，如果用户存在
                 await db.disconnect();
@@ -44,4 +44,4 @@ export default NextAuth({
             }
         })
     ]
-})
+});

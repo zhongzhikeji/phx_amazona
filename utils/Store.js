@@ -30,7 +30,8 @@ function reducer(state,action){
             [...state.cart.cartItems,newItem];
             Cookies.set('cart',JSON.stringify({...state.cart,cartItems}))
             return {...state,cart:{...state.cart,cartItems}
-            }
+            };
+
            
         }
         //删除状态
@@ -44,6 +45,16 @@ function reducer(state,action){
                 //返回购物车中先前的状态，通过这一行更新context状态
                 return {...state,cart:{...state.cart,cartItems}}
             }
+        case 'CART_RESET':
+            return {
+                ...state,
+                cart: {
+                    cartItems: [],
+                    shippingAddress:{ location:{}},
+                    paymentMethod:'',
+                },
+            };
+
         //对于默认情况，仅返回状态，reducer函数
         default:
             return state;
