@@ -29,7 +29,7 @@ export default  NextAuth({
                 const user=await User.findOne({
                    email: credentials.email,
                 });
-                //然后断开连接，保持代码，下一步检查用户和密码一起，如果用户存在
+                //然后断开连接，保存代码，下一步检查用户和密码一起，如果用户存在
                 await db.disconnect();
                 if (user && bcryptjs.compareSync(credentials.password, user.password)){
                     return{
