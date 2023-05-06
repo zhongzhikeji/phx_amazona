@@ -35,16 +35,6 @@
       "static/chunks/main.js",
       "static/chunks/pages/cart.js"
     ],
-    "/login": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/login.js"
-    ],
-    "/product/[slug]": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/product/[slug].js"
-    ],
     "/shipping": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
