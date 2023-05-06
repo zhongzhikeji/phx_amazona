@@ -1,4 +1,4 @@
-import bcrypt from 'bcryptjs'
+const bcrypt = require('bcryptjs')
 
 const data={
     users:[
@@ -7,12 +7,14 @@ const data={
         email:'my123@qq.com',
         password:bcrypt.hashSync('123456'),//加密数据库密码
         isAdmin:true,
+        createdAt: new Date(),
       },
       {
         name:'James',
         email:'your123@qq.com',
         password:bcrypt.hashSync('123456'),
         isAdmin:false,
+        createdAt: new Date(),
       },
     ],
     products: [
@@ -94,4 +96,4 @@ const data={
         },
       ],
 }
-export default data;
+module.exports = data;
