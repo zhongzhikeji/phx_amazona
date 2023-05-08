@@ -2,6 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 
 
+
 export default function ProductItem({product}) {
   return (
     <div className='card'>{/* 以下是一张卡片，上图下文 */}
@@ -14,14 +15,18 @@ export default function ProductItem({product}) {
         </Link>
         
         <div className='flex flex-col items-center justify-center p-5'>
-            <Link href={`/produce/${product.slug}`}>
+            <Link href={`/product/${product.slug}`}>
             <h2 className='text-lg'>{product.name}</h2>
             </Link>
             <p className='mb-2'>{product.brand}</p>
             <p>${product.price}</p>
-            <button className='primary-button' type='button'>
-                加入购物车
-            </button>
+            <Link href={`/product/${product.slug}`}>
+                <button className='primary-button' >
+                    查看详情
+                </button>
+            </Link>
+
+
         </div>
     </div>
   )

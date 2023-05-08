@@ -20,7 +20,7 @@ export default  NextAuth({
             return session
         }
     },
-    //提供
+    //提供凭证认证，来自mongodb
     providers:[
         CredentialsProvider({
             async authorize(credentials){

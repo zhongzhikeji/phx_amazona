@@ -29,6 +29,7 @@ export default function LoginScreen(){
     const submitHandler=async ({email,password})=>{
         // console.log(tel,password)
         try {
+            // signIn('credentials'）验证用户
             const result=await signIn('credentials',{
                 redirect:false,
                 email,
@@ -79,7 +80,7 @@ export default function LoginScreen(){
                 </div>
                 <div className="mb-4">
                     <p>还没有账号？</p>
-                    <Link href="register">注册</Link>
+                    <Link href="register" className="links">注册</Link>
                 </div>
             </form>
         </Layout>

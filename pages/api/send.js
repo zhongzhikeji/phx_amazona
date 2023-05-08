@@ -1,4 +1,4 @@
-//sendjs为看样本用户
+//sendjs为样本用户
 
 import db from "@/utils/db";
 import User from "@/models/User";

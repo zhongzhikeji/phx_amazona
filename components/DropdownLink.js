@@ -1,10 +1,10 @@
 import React from "react";
 import Link from "next/link";
  export default function DropdownLink(props){
-     let {href,childen,...rest}=props
+     let {href,children,}=props
      return(
          <Link href={href}>
-             <a {...rest}>{childen}</a>
+             {children}
          </Link>
      )
  }

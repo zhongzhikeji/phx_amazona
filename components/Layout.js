@@ -6,8 +6,7 @@ import { Store } from '@/utils/Store';
 import {ToastContainer} from "react-toastify";
 import {signOut, useSession} from "next-auth/react";
 import 'react-toastify/dist/ReactToastify.css'
-import {Menu} from "@headlessui/react";
-import DropdownLink from "@/components/DropdownLink";
+import {Menu} from "@headlessui/react"; //headlessui
 
 export default function Layout({title,children}) {
     const {status,data:session}=useSession()
@@ -18,6 +17,8 @@ export default function Layout({title,children}) {
     useEffect(()=>{
         setCartItemsCount(cart.cartItems.reduce((a,c)=>a+c.quantity,0));
     },[cart.cartItems])
+
+    //点击登出logoutClickHandler函数 next-auth
     const logoutClickHandler =() =>{
         Cookies.remove('cart');
         dispatch({type:'CART_RESET'});
@@ -40,7 +41,7 @@ export default function Layout({title,children}) {
                     amazona
                 </Link>
                 <div>
-                    <Link href="/cart" className='p-2'>
+                    <Link href="/cart" className='p-2 links'>
                         购物车
                         {cartItemsCount>0 &&(
                             <span className='ml-1 rounded-full bg-red-600 px-2 py-1 text-xs font-bold text-white'>
@@ -52,20 +53,21 @@ export default function Layout({title,children}) {
                         {status ==='loading' ? (
                             'Loading'
                         ) :session?.user?(
+                            // as="div" 使用 as将菜单转换为div 输出html
                             <Menu as="div" className="relative inline-block">
                                 <Menu.Button className="text-amber-200">
                                     {session.user.name}
                                 </Menu.Button>
                                 <Menu.Items className="absolute right-0 w-56 origin-top-right shadow-lg">
-                                    <Menu.Item>
-                                        <DropdownLink className="dropdown-link" href="/profile">
+                                    <Menu.Item className="dropdown-link" >
+                                        <a href="/profile">
                                             个人信息
-                                        </DropdownLink>
+                                        </a>
                                     </Menu.Item>
-                                    <Menu.Item>
-                                        <DropdownLink className="dropdown-link" href="/history">
+                                    <Menu.Item  className="dropdown-link" >
+                                        <a href="/history">
                                             购买记录
-                                        </DropdownLink>
+                                        </a>
                                     </Menu.Item>
                                     <Menu.Item className="dropdown-link" href="/">
                                         <a className="dropdown-link" onClick={logoutClickHandler}>
@@ -77,7 +79,7 @@ export default function Layout({title,children}) {
                                 </Menu.Items>
                             </Menu>
                         ):(
-                            <Link href="/login">
+                            <Link href="/login" className="links">
                                 登录
                             </Link>
                         )}

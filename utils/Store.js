@@ -10,7 +10,7 @@ const initialState={
     //在cookie中只能保存一个字符串，使用JSON.parse 转化cookie中的一个js对象
     //在CART_ADD_ITEM 更新
     cart:Cookies.get('cart')?JSON.parse(Cookies.get('cart')):
-    { cartItems:[]},
+    { cartItems:[],shippingAddress:{}},
 
 };
 
@@ -54,6 +54,17 @@ function reducer(state,action){
                     paymentMethod:'',
                 },
             };
+        case 'SAVE_SHIPPING_ADDRESS':
+            return {
+                ...state,
+                cart: {
+                    ...state.cart,
+                    shippingAddress: {
+                        ...state.cart.shippingAddress,
+                        ...action.payload,
+                    }
+                }
+            }
 
         //对于默认情况，仅返回状态，reducer函数
         default:
