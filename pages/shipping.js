@@ -21,14 +21,15 @@ export default function ShippingScreen() {
     useEffect(()=>{
         setValue('fullName',shippingAddress.fullName);
         setValue('phone',shippingAddress.phone);
+        setValue('postal',shippingAddress.postal)
         setValue('city',shippingAddress.city);
         setValue('address',shippingAddress.address);
     },[setValue, shippingAddress])
 
-    const submitHandler= ({fullName,phone,city,address}) =>{
+    const submitHandler= ({fullName,phone,city,postal,address}) =>{
         dispatch({
             type:'SAVE_SHIPPING_ADDRESS',
-            payload:{fullName,phone,city,address},
+            payload:{fullName,phone,postal,city,address},
         });
         //'cart' is key,第二个参数是以前的数据
         Cookies.set(
@@ -38,6 +39,7 @@ export default function ShippingScreen() {
                 shippingAddress:{
                     fullName,
                     phone,
+                    postal,
                     city,
                     address,
                 }
@@ -77,6 +79,21 @@ export default function ShippingScreen() {
                    />
                    {errors.phone && (
                        <div className="text-red-500">{errors.phone.message}</div>
+                   )}
+               </div>
+               <div className='mb-4'>
+                   <label htmlFor="postal">邮政编码</label>
+                   <input
+                       className='w-full'
+                       id="postal"
+                       autoFocus
+                       {...register('postal',{
+                           required:'邮政编码',
+                           minLength:{value:6,message:'邮政编码'}
+                       })}
+                   />
+                   {errors.postal && (
+                       <div className="text-red-500">{errors.postal.message}</div>
                    )}
                </div>
                <div className='mb-4'>

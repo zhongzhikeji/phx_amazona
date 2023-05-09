@@ -65,6 +65,14 @@ function reducer(state,action){
                     }
                 }
             }
+        case 'SAVE_PAYMENT_METHOD':
+            return {
+                ...state,
+                cart: {
+                    ...state.cart,
+                    paymentMethod: action.payload
+                }
+            }
 
         //对于默认情况，仅返回状态，reducer函数
         default:

@@ -95,9 +95,18 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Add User Menu
 1. check user authentication
-2. install headlessui
+2. install headless-ui
 3. show user menu
 
 ## create shipping screen
 1. display address fields
 2. save address in context
+
+## create payment method screen
+1. display payment method
+2. save payment method in context
+
+## seed sample products
+1. insert sample products to mongodb
+2. load products from db in home and product screen
+3. check product count in stock in add to cart
