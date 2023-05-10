@@ -32,7 +32,7 @@ export default function ProductScreen() {
   return (
     <Layout title={product.name}>
       <div className='py-2'>
-        <Link href="/">back</Link>
+        <Link href="/" className="links">返回</Link>
       </div>
       <div className='grid md:grid-cols-4 md:gap-3'> 
         <div className='md:col-span-2'>
@@ -47,22 +47,21 @@ export default function ProductScreen() {
         <div>
           <ul>
             <li>
-              <h1 className='text-lg'>{product.name}</h1>
+              <h1 className='text-lg font-bold'>{product.name}</h1>
             </li>
             <li>类别：{product.category}</li>
             <li>品牌：{product.brand}</li>
-            <li>{product.rating} of {product.numReviews} reviews</li>
+            {/*<li>{product.rating} 的{product.numReviews} 条评论</li>*/}
             <li>描述：{product.description}</li>
           </ul>
         </div>
         <div className='card p-5 h-36'>
           <div className='mb-2 flex justify-between'>
-            <div>Price</div>
-            <div>${product.price}</div>
+            <div>价格</div>
+            <div>RMB：{product.price}</div>
           </div>
           <div className='mb-2 flex justify-between'>
-            <div>Status</div>
-            <div>{product.countInStock > 0 ? "In stock" :"Unavailable"}</div>
+            <div>{product.countInStock > 0 ? "有库存" :"没库存"}</div>
           </div>
           <button className='primary-button w-full' onClick={addToCartHandler}>加入购物车</button>
         </div>

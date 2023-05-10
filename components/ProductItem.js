@@ -19,7 +19,7 @@ export default function ProductItem({product}) {
             <h2 className='text-lg'>{product.name}</h2>
             </Link>
             <p className='mb-2'>{product.brand}</p>
-            <p>${product.price}</p>
+            <p>RMB：{product.price}</p>
             <Link href={`/product/${product.slug}`}>
                 <button className='primary-button' >
                     查看详情

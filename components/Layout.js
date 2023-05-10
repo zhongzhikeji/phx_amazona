@@ -55,7 +55,7 @@ export default function Layout({title,children}) {
                         ) :session?.user?(
                             // as="div" 使用 as将菜单转换为div 输出html
                             <Menu as="div" className="relative inline-block">
-                                <Menu.Button className="text-amber-200">
+                                <Menu.Button className="text-amber-400">
                                     {session.user.name}
                                 </Menu.Button>
                                 <Menu.Items className="absolute right-0 w-56 origin-top-right shadow-lg">

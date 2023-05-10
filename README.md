@@ -110,3 +110,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 1. insert sample products to mongodb
 2. load products from db in home and product screen
 3. check product count in stock in add to cart
+
+## load products from mongodb
+1. load products in home page from mongodb
+2. load products in product page from mongodb
+3. use product api to chcek count in stock in add to cart

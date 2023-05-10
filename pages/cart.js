@@ -26,7 +26,7 @@ import dynamic from 'next/dynamic';
   };
   return (
     <Layout title="Shopping Cart">
-      <h1 className="mb-4 text-xl">Shopping Cart</h1>
+      <h1 className="mb-4 text-xl">购物车</h1>
       {cartItems.length === 0 ? (
         <div>
             购物车是空的！！！<Link href="/" className="links">点击购物吧~</Link>
@@ -94,7 +94,7 @@ import dynamic from 'next/dynamic';
                 <div className="pb-3 text-xl">
                   共 ({cartItems.reduce((a, c) => a + c.quantity, 0)}) : ¥
                   {cartItems.reduce((a, c) => a + c.quantity * c.price, 0)}
-                r</div>
+                </div>
               </li>
               <li>
                   {/*'login?redirect=/shipping' 检查用户是否登录，如果登录则跳转shipping，如果没有登录则跳转login*/}
